@@ -4,11 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Persistence
 {
-    // Shouldn't be on this layer
-
     public class AppDbContext : DbContext//, IAppDbContext
     {
         public DbSet<Employee> Employees { get; set; } = null!;
+
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+          : base(options)
+        {
+            //this.Database.EnsureCreated();
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
