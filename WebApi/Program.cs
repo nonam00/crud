@@ -1,5 +1,6 @@
-using Domain;
 using Microsoft.EntityFrameworkCore;
+
+using Domain;
 using Persistence;
 using WebApi;
 using WebApi.Middleware;
