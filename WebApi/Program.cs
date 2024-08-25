@@ -11,10 +11,6 @@ builder.Services.AddPersistence(builder.Configuration);
 
 var app = builder.Build();
 
-app.UseDeveloperExceptionPage();
-app.UseSwagger();
-app.UseSwaggerUI();
-
 app.UseCustomExceptionHandler();
 
 app.MapGet("/", async (AppDbContext dbContext) =>
